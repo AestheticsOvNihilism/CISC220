@@ -35,7 +35,7 @@ void fillArr(int* a, int c){
 void printArr(int* a, int b){
 	cout<<" Array: "<< endl;
 	for(int i=0; i<b;i++){
-		cout<< a[i]<<" "<<endl;
+		cout<< a[i]<<" ";
 	}
 }
 
