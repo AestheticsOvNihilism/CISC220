@@ -3,8 +3,10 @@
 
  *
  *  Created on: 2016年9月17日
- *      Author: CW
+ *      Author: Chong Wang/Chu Qiao
  */
+
+
 
 #include <iostream>
 #include <stdio.h>
@@ -15,14 +17,22 @@
 
 using namespace std;
 
+//q6
+
 void fillArr(int a[], int ranNum);
 void printArr(int a[], int ranNum);
+void reverseArr(int a[], int ranNum);
+void swap(int* a ,int* b);
+void printReversed(int a[], int ranNum);
 
 int main(){
+   srand(time(NULL));
    int ranNum=rand() % 30 + 20;
    int a[ranNum];
    fillArr(a, ranNum);
    printArr(a, ranNum);
+   reverseArr(a, ranNum);
+   printReversed(a, ranNum);
 }
 
 void fillArr(int* a, int c){
@@ -37,9 +47,33 @@ void printArr(int* a, int b){
 	for(int i=0; i<b;i++){
 		cout<< a[i]<<" ";
 	}
+	cout<<endl;
+
 }
 
+//q7
 
+void reverseArr(int* a, int d){
+	int* p1 =a;
+	int* p2= a+d-1;
+    while(p1<p2){
+    	swap(p1,p2);
+    	p1++;
+    	p2--;
+    }
 
+}
 
+void swap(int* a, int* e ){
+	int t = *a;
+	*a = *e;
+	*e = t;
+}
+
+void printReversed(int* a,int ranNum){
+	int* m = a + ranNum;
+	for ( int *p= a; p< m;p++)
+		cout<<*p<<" ";
+	cout<<"\n";
+}
 
