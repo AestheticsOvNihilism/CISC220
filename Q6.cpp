@@ -31,9 +31,12 @@ int main(){
    int ranNum=rand() % 30 + 20;
    int a[ranNum];
    fillArr(a, ranNum);
+   cout<<"Original array is "<<endl;
    printArr(a, ranNum);
+   cout<<"Reversed array is "<<endl;
    reverseArr(a, ranNum);
    printReversed(a, ranNum);
+   cout<<"min value is "<<endl;
    findMin(a, ranNum);
 }
 
@@ -45,7 +48,6 @@ void fillArr(int* a, int c){
 }
 
 void printArr(int* a, int b){
-	cout<<" Array: "<< endl;
 	for(int i=0; i<b;i++){
 		cout<< a[i]<<" ";
 	}
@@ -90,3 +92,12 @@ void findMin(int* a, int ranNum){
 	}
 	cout<<min<<endl;
 }
+
+// q9
+// index is where we begin
+/*
+void sumArray(int*a, int index, int ranNum){
+	int i, sum = 0;
+	for(i=0,)
+}
+*/
