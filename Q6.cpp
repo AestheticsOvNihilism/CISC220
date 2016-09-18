@@ -7,7 +7,6 @@
  */
 
 
-
 #include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
@@ -24,6 +23,8 @@ void printArr(int a[], int ranNum);
 void reverseArr(int a[], int ranNum);
 void swap(int* a ,int* b);
 void printReversed(int a[], int ranNum);
+void findMin(int a[], int size );
+
 
 int main(){
    srand(time(NULL));
@@ -33,6 +34,7 @@ int main(){
    printArr(a, ranNum);
    reverseArr(a, ranNum);
    printReversed(a, ranNum);
+   findMin(a, ranNum);
 }
 
 void fillArr(int* a, int c){
@@ -77,3 +79,14 @@ void printReversed(int* a,int ranNum){
 	cout<<"\n";
 }
 
+// q8
+
+void findMin(int* a, int ranNum){
+	int min = a[0];
+	for(int i = 1; i < ranNum; i++){
+		if(a[i] < min){
+			min = a[i];
+		}
+	}
+	cout<<min<<endl;
+}
