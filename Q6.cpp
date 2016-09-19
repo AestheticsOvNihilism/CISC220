@@ -17,6 +17,7 @@
 using namespace std;
 
 //q6
+/*
 
 void fillArr(int a[], int ranNum);
 void printArr(int a[], int ranNum);
@@ -29,14 +30,21 @@ void printReversed(int a[], int ranNum);
 
 void findMin(int a[], int size );
 
-//Q10
-void bubblesort(int a[], int ranNum);
+//Q10 void bubblesort(int a[], int ranNum);
 
 //Q11
+*/
+
+//Q12
+
+void dArray(int*** a, int x, int y, int z);
+
+void dArray2(int*** a, int x, int y, int z);
 
 
 int main(){
 	//Q6
+	/*
    srand(time(NULL));
    int ranNum=rand() % 30 + 20;
    int a[ranNum];
@@ -52,11 +60,21 @@ int main(){
    findMin(a, ranNum);
 
    //Q11
+ */
+
+ /*
    int filter=rand() % 5 + 3;
    windowsize(filter);
+*/
 
+   //Q12
+    int v1 = -1;
+	int v2 = -1;
+	int v3 = -1;
+    int***v = NULL;
+    dArray(v,v1,v2,v3);
 }
-
+/*
 void fillArr(int* a, int c){
     srand(time(NULL));
 	   for (int i=0; i<c; i++){
@@ -127,6 +145,7 @@ void bubblesort(int* a, int b){
 */
 
 // Q11
+/*
 int windowsize(int filter){
        int filter_size= *filter%2;
        int windowsize;
@@ -146,13 +165,59 @@ int startLoc(int filter){
 
 
 
-/*
+
 int endLoc(int filter, int ranNum2){
 	int end_index = ranNum2 - 1- filter%2 ;
 	return end_index;
 }
-*/
 
+*/
 //Q12
 
+void dArray(int*** a, int &x, int &y, int &z){
+	int r1 = rand()%4+(2);
+	int r2 = rand()%4+(2);
+	int r3 = rand()%4+(2);
+	x=r1;
+	y=r2;
+	z=r3;
+	a = new int** [y];
+	for (int i =0; i<x ;i++){
+		a[i] = new int*[y];
+		for (int j = 0; j < y; j++){
+			a[i][j]= new int[y];
+		}
+	}
+	for (int i = 0; i < x; i++){
+		 for (int j = 0; j<y; j++){
+			 for ( int k = 0; k < z; k++){
+				 a[i][j][k] = i + j + k ;
 
+			 }
+		 }
+	}
+	cout<<endl;
+
+	dArray2(a,x,y,z);
+
+}
+
+void dArray2(int*** a, int x, int y, int z){
+	cout<<"dimension: "<< x <<","<<y<<","<<z<<endl;
+	for(int i = 0;i<x;i++){
+		cout<<endl;
+		for (int j = 0; j<y; j++){
+			cout<<" || ";
+			for (int k = 0; k<z ; k++ ){
+				cout<<a[i][j][k]<<",";
+
+			}
+		}
+	}
+	for ( int i = 0 ; i<x; i ++){
+		for(int j = 0 ; j < y ; j++){
+			delete[] a[i][j];
+		}
+	}
+	delete []a ;
+}
